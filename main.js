@@ -15,18 +15,21 @@ document.body.setAttribute("style", "position:relative;")
 
 document.body.onmousedown = function(e) {
 
-  e.preventDefault();
+    //capture top left position of cursor on mouse down
+    let topLeftX = e.pageX;
+    let topLeftY = e.pageY;
+    console.log(topLeftX)
+    console.log(topLeftY)
 
-  //capture top left position of cursor on mouse down
-  let topLeftX = e.pageX;
-  let topLeftY = e.pageY;
-  console.log(topLeftX)
-  console.log(topLeftY)
-
-  //create elephant and set initial position
+let arrElephants = ['elephant-final.png','ele2.png','ele3.png','ele4.png', 'ele5.png','ele6.png','ele7.png']
+let index = Math.floor(Math.random() * 7);
+let randomElephant = arrElephants[index];
   elephant = document.createElement('img');
 
-  let imgURL = true ? chrome.extension.getURL('elephant-final.png') : 'chrome-extension/elephant-final.png'
+  let imgURL = true ? chrome.extension.getURL(randomElephant) : `chrome-extension/${randomElephant}`
+  e.preventDefault();
+
+  
   elephant.setAttribute("src", imgURL);
   elephant.setAttribute("style", "position:absolute; display:block; left:" + topLeftX + "px; top:" + topLeftY + "px; width: 100px; height: 75px; z-index:1000;");
 
@@ -47,6 +50,13 @@ document.body.onmousedown = function(e) {
 	   window.addEventListener('mousemove', startResizing, false);
    	 window.addEventListener('mouseup', stopResizing, false);
 
+
+  let audioElement = document.createElement('audio');
+  audioElement.setAttribute('src', chrome.extension.getURL('elephant_sound.mp3'));
+  audioElement.play();
+
+
+  
 
 
 
