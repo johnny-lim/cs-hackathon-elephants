@@ -36,7 +36,7 @@ let randomElephant = arrElephants[index];
   //add elephant to body
   document.body.appendChild(elephant);
 
-
+  
     function startResizing(e) {
        elephant.style.width = Math.abs(e.clientX - topLeftX) + 'px';
        elephant.style.height = Math.abs(e.clientY - topLeftY) + 'px';
@@ -48,7 +48,8 @@ let randomElephant = arrElephants[index];
     }
 
 	   window.addEventListener('mousemove', startResizing, false);
-   	 window.addEventListener('mouseup', stopResizing, false);
+      window.addEventListener('mouseup', stopResizing, false);
+  
 
 
   let audioElement = document.createElement('audio');
