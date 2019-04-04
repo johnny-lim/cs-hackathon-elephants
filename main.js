@@ -13,19 +13,42 @@ parent.appendChild(elephant);
 //set body to position relative;
 document.body.setAttribute("style", "position:relative;")
 
-document.body.onclick = function(e) {
-  console.log(e.pageX)
-  console.log(e.pageY)
+document.body.onmousedown = function(e) {
 
+  e.preventDefault();
+
+  //capture top left position of cursor on mouse down
+  let topLeftX = e.pageX;
+  let topLeftY = e.pageY;
+  console.log(topLeftX)
+  console.log(topLeftY)
+
+  //create elephant and set initial position
   elephant = document.createElement('img');
+
   let imgURL = true ? chrome.extension.getURL('elephant-final.png') : 'chrome-extension/elephant-final.png'
   elephant.setAttribute("src", imgURL);
-  elephant.setAttribute("style", "position:absolute; display:block; left:" + e.pageX + "px; top:" + e.pageY + "px; width: 100px; height: 75px; z-index:1000;");
+  elephant.setAttribute("style", "position:absolute; display:block; left:" + topLeftX + "px; top:" + topLeftY + "px; width: 100px; height: 75px; z-index:1000;");
 
-  console.log(elephant)
+  //add elephant to body
+  document.body.appendChild(elephant);
 
 
-  document.body.appendChild(elephant)
+    function startResizing(e) {
+       elephant.style.width = Math.abs(e.clientX - topLeftX) + 'px';
+       elephant.style.height = Math.abs(e.clientY - topLeftY) + 'px';
+    }
+
+    function stopResizing(e) {
+      window.removeEventListener('mousemove', startResizing, false);
+      window.removeEventListener('mouseup', stopResizing, false);
+    }
+
+	   window.addEventListener('mousemove', startResizing, false);
+   	 window.addEventListener('mouseup', stopResizing, false);
+
+
+
 
 
 }
