@@ -1,13 +1,12 @@
 {
   "manifest_version":2,
-  "name": "Focus",
+  "name": "Pink Elephant",
   "version": "1.0",
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*", "https://www.google.com/*"],
+      "matches": ["https://www.youtube.com/*", "https://www.google.com/*", "https://www.facebook.com/*", "https://www.linkedin.com/*","https://www.stackoverflow.com/*","https://www.reddit.com/*"],
       "js": ["./main.js"]
     }
   ],
-  "web_accessible_resources": ["elephant-final.png"]
-
+  "web_accessible_resources": ["elephant-final.png", "ele2.png", "ele3.png", "ele4.png", "ele5.png","ele6.png","ele7.png","elephant_sound.mp3"]
 }
