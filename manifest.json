@@ -4,9 +4,10 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
+      "matches": ["https://www.youtube.com/*", "https://www.google.com/*"],
       "js": ["./main.js"]
     }
   ],
   "web_accessible_resources": ["elephant-final.png"]
+
 }
