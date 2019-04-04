@@ -29,7 +29,7 @@ let randomElephant = arrElephants[index];
   let imgURL = true ? chrome.extension.getURL(randomElephant) : `chrome-extension/${randomElephant}`
   e.preventDefault();
 
-  
+
   elephant.setAttribute("src", imgURL);
   elephant.setAttribute("style", "position:absolute; display:block; left:" + topLeftX + "px; top:" + topLeftY + "px; width: 100px; height: 75px; z-index:1000;");
 
@@ -38,8 +38,8 @@ let randomElephant = arrElephants[index];
 
   
     function startResizing(e) {
-       elephant.style.width = Math.abs(e.clientX - topLeftX) + 'px';
-       elephant.style.height = Math.abs(e.clientY - topLeftY) + 'px';
+       elephant.style.width = 100 + e.pageX - topLeftX + 'px';
+       elephant.style.height = 75 + e.pageY - topLeftY + 'px';
     }
 
     function stopResizing(e) {
@@ -57,9 +57,10 @@ let randomElephant = arrElephants[index];
   audioElement.play();
 
 
-  
-
-
-
-
 }
+
+/*
+"browser_action": {
+  "default_icon" :  {"32": "elephant-final.png"}
+}
+*/

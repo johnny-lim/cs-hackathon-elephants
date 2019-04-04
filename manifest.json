@@ -4,9 +4,10 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*", "https://www.google.com/*", "https://www.facebook.com/*", "https://www.linkedin.com/*","https://www.stackoverflow.com/*","https://www.reddit.com/*"],
+      "matches": ["https://*/*"],
       "js": ["./main.js"]
     }
   ],
   "web_accessible_resources": ["elephant-final.png", "ele2.png", "ele3.png", "ele4.png", "ele5.png","ele6.png","ele7.png","elephant_sound.mp3"]
+
 }
