@@ -21,7 +21,7 @@ document.body.onmousedown = function(e) {
     console.log(topLeftX)
     console.log(topLeftY)
 
-let arrElephants = ['elephant-final.png','ele2.png','ele3.png','ele4.png', 'ele5.png','ele6.png','ele7.png']
+let arrElephants = ['/imgs/elephant-final.png','/imgs/ele2.png','/imgs/ele3.png','/imgs/ele4.png', '/imgs/ele5.png','/imgs/ele6.png','/imgs/ele7.png']
 let index = Math.floor(Math.random() * 7);
 let randomElephant = arrElephants[index];
   elephant = document.createElement('img');
@@ -29,9 +29,9 @@ let randomElephant = arrElephants[index];
   let imgURL = true ? chrome.extension.getURL(randomElephant) : `chrome-extension/${randomElephant}`
   e.preventDefault();
 
-
+  
   elephant.setAttribute("src", imgURL);
-  elephant.setAttribute("style", "position:absolute; display:block; left:" + topLeftX + "px; top:" + topLeftY + "px; width: 100px; height: 75px; z-index:1000;");
+  elephant.setAttribute("style", "position:absolute; display:block; left:" + topLeftX + "px; top:" + topLeftY + "px; width: 100px; height: 75px; z-index:1000; pointer-events: none;");
 
   //add elephant to body
   document.body.appendChild(elephant);

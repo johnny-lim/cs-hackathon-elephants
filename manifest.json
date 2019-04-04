@@ -1,13 +1,17 @@
 {
   "manifest_version":2,
-  "name": "Pink Elephant",
-  "version": "1.0",
+  "name": "PNKIE",
+  "icons": {
+    "128": "/imgs/icon128.png" 
+  },
+  "description": "You're drunk, go home.",
+  "version": "2.6.0",
   "content_scripts": [
     {
       "matches": ["https://*/*"],
       "js": ["./main.js"]
     }
   ],
-  "web_accessible_resources": ["elephant-final.png", "ele2.png", "ele3.png", "ele4.png", "ele5.png","ele6.png","ele7.png","elephant_sound.mp3"]
+  "web_accessible_resources": ["/imgs/elephant-final.png", "/imgs/ele2.png", "/imgs/ele3.png", "/imgs/ele4.png", "/imgs/ele5.png","/imgs/ele6.png","/imgs/ele7.png","elephant_sound.mp3"]
 
 }
