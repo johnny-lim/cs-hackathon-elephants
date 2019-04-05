@@ -2,7 +2,7 @@
   "manifest_version":2,
   "name": "PNKIE",
   "icons": {
-    "128": "/imgs/icon128.png" 
+    "128": "/imgs/icon3.png" 
   },
   "description": "You're drunk, go home.",
   "version": "2.6.0",
